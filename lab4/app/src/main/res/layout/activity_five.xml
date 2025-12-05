@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp"
+    android:background="#BBDEFB"> <TextView
+    android:text="🎉 ВІТАЮ!"
+    android:textSize="40sp"
+    android:textStyle="bold"
+    android:textColor="#0D47A1" android:layout_marginBottom="20dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"/>
+
+    <TextView
+        android:text="Ви успішно пройшли географічний квест!"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginBottom="50dp"
+        android:textColor="#424242"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <Button
+        android:id="@+id/btnHome"
+        android:text="На головну"
+        android:backgroundTint="#009688" android:textColor="@android:color/white"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</LinearLayout>
