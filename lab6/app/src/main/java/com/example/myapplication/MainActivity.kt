@@ -1,20 +1,29 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.ListView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        // 1. Створюємо дані
+        val products: ArrayList<Product?> = ArrayList<Product?>()
+        products.add(Product("Помідори", "кг."))
+        products.add(Product("Миколай Roshen", "шт."))
+        products.add(Product("Пиво Львівське Різдвяне 0.5л", "шт."))
+        products.add(Product("Nemiroff", "л."))
+        products.add(Product("Криветки", "кг."))
+
+        // 2. Знаходимо список
+        val productList = findViewById<ListView?>(R.id.productList)
+
+        // 3. Створюємо адаптер
+        val adapter: ProductAdapter = ProductAdapter(this, R.layout.list_item, products)
+
+        // 4. Підключаємо адаптер до списку
+        productList.setAdapter(adapter)
     }
 }
